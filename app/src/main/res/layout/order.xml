@@ -1,0 +1,429 @@
+<!-- A DrawerLayout is intended to be used as the top-level content view using match_parent for both width and height to consume the full space available. -->
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- As the main content view, the view below consumes the entire
+         space available using match_parent in both dimensions. -->
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_bg_main"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textViewInStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextAmount"
+            app:layout_constraintEnd_toEndOf="@+id/editTextAmount"
+            app:layout_constraintStart_toStartOf="@+id/editTextAmount" />
+
+        <EditText
+            android:id="@+id/editTextPrice"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/sel_gradient_bg_frame"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:tag="3"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView35"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCatNo" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:elegantTextHeight="false"
+            android:gravity="end"
+            android:paddingEnd="3dp"
+            android:text="מחיר"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textIsSelectable="false"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/editTextAmount"
+            app:layout_constraintStart_toEndOf="@+id/editTextPrice"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCatNo" />
+
+        <Button
+            android:id="@+id/buttonOrderCom"
+            style="@android:style/Widget.Button.Toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@drawable/search_selector"
+            android:singleLine="false"
+            android:soundEffectsEnabled="true"
+            android:text="הערה כללית"
+            android:textColor="#FFEB3B"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonOrder"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttonOrder"
+            app:layout_constraintTop_toTopOf="@+id/buttonOrder"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/buttonCancel"
+            style="@android:style/Widget.Button.Toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:background="@drawable/search_selector"
+            android:singleLine="false"
+            android:soundEffectsEnabled="true"
+            android:text="ביטול"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonOrder"
+            app:layout_constraintEnd_toStartOf="@+id/buttonOrder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/buttonOrder"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:elegantTextHeight="false"
+            android:gravity="end"
+            android:paddingEnd="3dp"
+            android:text="כמות"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textIsSelectable="false"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editTextAmount"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+        <EditText
+            android:id="@+id/editTextTransport"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/sel_gradient_bg_frame"
+            android:drawableRight="@android:drawable/arrow_down_float"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:tag="3"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCatNo" />
+
+        <EditText
+            android:id="@+id/editTextComments"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/sel_gradient_bg_frame"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:tag="3"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView30"
+            app:layout_constraintStart_toEndOf="@+id/buttonAdd"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAmount"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="32dp"
+            android:elegantTextHeight="false"
+            android:gravity="end"
+            android:paddingEnd="3dp"
+            android:text="הערות"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textIsSelectable="false"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/buttonAdd"
+            style="@android:style/Widget.Button.Toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/search_selector"
+            android:singleLine="false"
+            android:soundEffectsEnabled="true"
+            android:text="הוסף"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/buttonSearch"
+            app:layout_constraintTop_toBottomOf="@+id/editTextTransport"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/buttonSearch"
+            style="@android:style/Widget.Button.Toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/search_selector"
+            android:singleLine="false"
+            android:soundEffectsEnabled="true"
+            android:text="חיפוש"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextName"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <Button
+            android:id="@+id/buttonOrder"
+            android:layout_width="109dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/order_selector"
+            android:text="שליחה"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextComments" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/sel_gradient_bg_frame"
+            android:dropDownWidth="match_parent"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:popupBackground="#A118FFFF"
+            android:selectAllOnFocus="false"
+            android:tag="1"
+            android:textDirection="locale"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editTextCatNo"
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/sel_gradient_bg_frame"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:tag="2"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView7"
+            app:layout_constraintStart_toEndOf="@+id/buttonSearch"
+            app:layout_constraintTop_toBottomOf="@+id/editTextName"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <EditText
+            android:id="@+id/editTextAmount"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/sel_gradient_bg_frame"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:tag="3"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/textView33"
+            app:layout_constraintStart_toEndOf="@+id/textView35"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCatNo" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@android:color/holo_red_dark"
+            android:progressBackgroundTint="@android:color/holo_red_dark"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.175"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@android:color/holo_red_dark"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintLeft_toLeftOf="@+id/progressBar"
+            app:layout_constraintRight_toRightOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:elegantTextHeight="false"
+            android:gravity="end"
+            android:paddingEnd="3dp"
+            android:text="משלוח"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textIsSelectable="false"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/editTextPrice"
+            app:layout_constraintStart_toEndOf="@+id/editTextTransport"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCatNo" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:elegantTextHeight="false"
+            android:elevation="0dp"
+            android:gravity="end"
+            android:paddingEnd="3dp"
+            android:text="שם לקוח"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textIsSelectable="false"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editTextName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:elegantTextHeight="false"
+            android:gravity="end"
+            android:paddingEnd="3dp"
+            android:text="מקט"
+            android:textColor="@color/abc_input_method_navigation_guard"
+            android:textIsSelectable="false"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/textView2"
+            app:layout_constraintStart_toEndOf="@+id/editTextCatNo"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+
+        <TextView
+            android:id="@+id/txtInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="44dp"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/buttonOrder"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1" />
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="0dp"
+            android:layout_height="297dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonOrder">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="10dp" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/textViewPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextPrice"
+            app:layout_constraintEnd_toEndOf="@+id/editTextPrice"
+            app:layout_constraintStart_toStartOf="@+id/editTextPrice" />
+
+    </android.support.constraint.ConstraintLayout>
+    <!-- android:layout_gravity="start" tells DrawerLayout to treat
+         this as a sliding drawer on the left side for left-to-right
+         languages and on the right side for right-to-left languages.
+         If you're not building against API 17 or higher, use
+         android:layout_gravity="left" instead. -->
+    <!-- The drawer is given a fixed width in dp and extends the full height of
+         the container. -->
+    <!--<fragment
+        android:id="@+id/navigation_drawer"
+        android:layout_width="@dimen/navigation_drawer_width"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:name="com.uri.part_search.NavigationDrawerFragment"
+        tools:layout="@layout/fragment_navigation_drawer" />-->
+
+</android.support.v4.widget.DrawerLayout>

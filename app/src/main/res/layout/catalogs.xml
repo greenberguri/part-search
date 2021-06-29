@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtInfo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center_horizontal"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonSearch2"
+                style="@android:style/Widget.Button.Toggle"
+                android:layout_width="88dp"
+                android:layout_height="34dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="32dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_selector"
+                android:singleLine="false"
+                android:soundEffectsEnabled="true"
+                android:text="חיפוש"
+                android:textSize="18sp"
+                app:layout_constraintHorizontal_bias="0.92"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13"
+                tools:layout_constraintLeft_creator="1"
+                tools:layout_constraintRight_creator="1"
+                tools:layout_constraintTop_creator="1" />
+
+            <EditText
+                android:id="@+id/editTextCatNo2"
+                android:layout_width="180dp"
+                android:layout_height="25dp"
+                android:background="#F8BBD0"
+                android:ems="10"
+                android:inputType="text"
+                android:tag="1"
+                android:textSize="14sp"
+                tools:layout_constraintLeft_creator="1"
+                tools:layout_constraintRight_creator="1"
+                tools:layout_constraintTop_creator="1" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="85dp"
+                android:layout_height="25dp"
+                android:background="#EA80FC"
+                android:elegantTextHeight="false"
+                android:paddingEnd="3dp"
+                android:text="מקט"
+                android:textColor="@color/abc_input_method_navigation_guard"
+                android:textIsSelectable="false"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/list_bg" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
